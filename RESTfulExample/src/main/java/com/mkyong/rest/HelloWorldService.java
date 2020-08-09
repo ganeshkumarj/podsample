@@ -8,13 +8,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
  
 @Path("/pod")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.TEXT_HTML)
 public class HelloWorldService {
  
 	@GET
 	public Response getMsg() {
  
-		String output = "I am from pod: " + System.getenv("HOST_NAME");
+		String output = "I am from pod: " + System.getenv("HOSTNAME");
  
 		return Response.status(200).entity(output).build();
  
